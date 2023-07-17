@@ -35,7 +35,14 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
-            
+            for j in range(len(checkpoints)):
+                lowestValue = 100000
+                for i in range(j, len(checkpoints)):
+                    if checkpoints[i] < lowestValue:
+                        lowestValue = checkpoints[i]
+                checkpoints.remove(lowestValue)
+                checkpoints.insert(0, lowestValue)
+            print(checkpoints)
             highestDistance = 0
             for i in range(len(checkpoints) - 1):
                 if abs(checkpoints[i + 1] - checkpoints[i]) > highestDistance:
