@@ -38,8 +38,8 @@ class Solution:
             
             highestDistance = 0
             for i in range(len(checkpoints) - 1):
-                if checkpoints[i + 1] - checkpoints[i] > highestDistance:
-                    highestDistance = checkpoints[i + 1] - checkpoints[i]
+                if abs(checkpoints[i + 1] - checkpoints[i]) > highestDistance:
+                    highestDistance = abs(checkpoints[i + 1] - checkpoints[i])
             return highestDistance
 
 def main():
